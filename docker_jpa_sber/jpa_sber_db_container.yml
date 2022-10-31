@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  spring_mvc-db:
+    image: postgres
+    container_name: jpa_sber-db
+    environment:
+      - POSTGRES_PASSWORD=user
+      - POSTGRES_USER=user
+      - POSTGRES_DB=jpa_sber
+    ports:
+      - "5492:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
